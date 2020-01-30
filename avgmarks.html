@@ -1,0 +1,33 @@
+<script>
+    var total;
+    function total()
+    {
+        total=+f.t1.value + +f.t2.value + +f.t3.value;
+        document.getElementById("a").innerHTML=total;
+    }
+    function avg()
+    {
+        var avg=(+f.t1.value + +f.t2.value + +f.t3.value)/3;
+         document.getElementById("a").innerHTML=avg;
+    }
+    function grade()
+    {
+        
+        if(total>250)
+            document.getElementById("a").innerHTML="A";
+        else if((total>200)&& (total<250))
+            document.getElementById("a").innerHTML="B";
+        else
+            document.getElementById("a").innerHTML="C";
+    }
+    f.submit();
+</script>
+<form name="f">
+    marks 1:<input type=number name="t1">
+    marks 2:<input type=number name="t2">
+    marks 3:<input type=number name="t3">
+    <input type=button onclick="total()" value="total"/>
+    <input type=button onclick="avg()" value="average"/>
+    <input type=button onclick="grade()" value="Grade"/>
+    <p id="a"></p>
+</form>
